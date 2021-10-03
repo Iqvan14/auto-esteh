@@ -20,7 +20,7 @@ commonname=www.lestakun.tech
 email=lesta@lestakun.tech
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/lesta-1/sc/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -43,7 +43,7 @@ WantedBy=multi-user.target
 END
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/lesta-1/sc/main/proxy-templated.py
+wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/proxy-templated.py
 chmod +x /usr/local/bin/edu-proxy
 
 # Installing Service
@@ -73,7 +73,7 @@ systemctl restart edu-proxy
 clear
 
 # Getting Proxy Template Ssl
-wget -q -O /usr/local/bin/edu-proxyssl https://raw.githubusercontent.com/lesta-1/sc/main/proxy-templatedssl.py
+wget -q -O /usr/local/bin/edu-proxyssl https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/proxy-templatedssl.py
 chmod +x /usr/local/bin/edu-proxyssl
 
 # Installing Service
@@ -103,7 +103,7 @@ systemctl restart edu-proxyssl
 clear
 
 # Getting Proxy Template Ovpn
-wget -q -O /usr/local/bin/edu-proxyovpn https://raw.githubusercontent.com/lesta-1/sc/main/proxy-templatedovpn.py
+wget -q -O /usr/local/bin/edu-proxyovpn https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/proxy-templatedovpn.py
 chmod +x /usr/local/bin/edu-proxyovpn
 
 # Installing Service
@@ -188,14 +188,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/lesta-1/sc/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/lesta-1/sc/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/lesta-1/sc/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -226,7 +226,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/lesta-1/sc/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -294,7 +294,7 @@ sudo make install
 END
 
 #OpenVPN
-wget https://raw.githubusercontent.com/lesta-1/sc/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -327,7 +327,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/lesta-1/sc/main/banner.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/banner.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -355,42 +355,42 @@ apt -y install figlet
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/lesta-1/sc/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/lesta-1/sc/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/lesta-1/sc/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/lesta-1/sc/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/lesta-1/sc/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/lesta-1/sc/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/lesta-1/sc/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/lesta-1/sc/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/lesta-1/sc/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/lesta-1/sc/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/lesta-1/sc/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/lesta-1/sc/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/lesta-1/sc/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/lesta-1/sc/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/lesta-1/sc/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/lesta-1/sc/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/lesta-1/sc/main/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/lesta-1/sc/main/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/lesta-1/sc/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/lesta-1/sc/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/lesta-1/sc/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/lesta-1/sc/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/lesta-1/sc/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/lesta-1/sc/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/lesta-1/sc/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/lesta-1/sc/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/lesta-1/sc/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/lesta-1/sc/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/lesta-1/sc/main/xp.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/lesta-1/sc/main/kernel-update.sh"
-wget -O cfd "https://raw.githubusercontent.com/lesta-1/sc/main/cfd.sh"
-wget -O cff "https://raw.githubusercontent.com/lesta-1/sc/main/cff.sh"
-wget -O cfh "https://raw.githubusercontent.com/lesta-1/sc/main/cfh.sh"
-wget -O autoreboot "https://raw.githubusercontent.com/lesta-1/sc/main/autoreboot.sh"
-wget -O swap "https://raw.githubusercontent.com/lesta-1/sc/main/swapkvm.sh"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/lesta-1/sc/main/user-limit.sh && chmod +x /usr/bin/user-limit
+wget -O add-host "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/about.sh"
+wget -O menu "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/member.sh"
+wget -O delete "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/info.sh"
+wget -O ram "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/port-vless.sh"
+wget -O wbmn "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/xp.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/kernel-update.sh"
+wget -O cfd "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/cfd.sh"
+wget -O cff "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/cfh.sh"
+wget -O autoreboot "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/autoreboot.sh"
+wget -O swap "https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/swapkvm.sh"
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/user-limit.sh && chmod +x /usr/bin/user-limit
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
