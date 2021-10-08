@@ -7,10 +7,6 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-NC='\e[0m'
-echo -e "${green}Permission Accepted...${NC}"
-exit 0
-fi
 if [ -f "/etc/v2ray/domain" ]; then
 echo "Script Already Installed"
 exit 0
