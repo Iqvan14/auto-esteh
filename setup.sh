@@ -5,7 +5,6 @@ if [ "${EUID}" -ne 0 ]; then
 if [ -f "/etc/v2ray/domain" ]; then
 echo "Script Already Installed"
 exit 0
-fi
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
 wget https://raw.githubusercontent.com/Iqvan14/auto-esteh/master/cf.sh && chmod +x cf.sh && ./cf.sh
