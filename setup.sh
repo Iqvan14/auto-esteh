@@ -7,11 +7,8 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-red='\e[1;31m'
-green='\e[0;32m'
 NC='\e[0m'
 echo -e "${green}Permission Accepted...${NC}"
-rm -f setup.sh
 exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
