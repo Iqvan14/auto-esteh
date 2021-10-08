@@ -11,7 +11,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$47.254.248.50;
-IZIN=$( curl http://akses.rpj08.my.id:81/akses | grep $MYIP )
+IZIN=$47.254.248.50 | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
