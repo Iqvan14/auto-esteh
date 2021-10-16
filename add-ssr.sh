@@ -3,7 +3,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
-fi
 clear
 IP=$(wget -qO- ifconfig.me/ip);
 echo "Please enter the username you want to set (do not repeat, does not support Chinese, will be reported incorrect!)"
